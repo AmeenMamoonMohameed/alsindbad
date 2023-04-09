@@ -4,7 +4,7 @@ workflows:
     name: Build Android and iOS
     environment:
       flutter: stable
-      xcode: "14.2" # تغيير إصدار إكسكود إلى 13.2
+      xcode: "14.3" # تغيير إصدار إكسكود إلى 13.2
       cocoapods: default
     scripts:
       - flutter packages pub get
