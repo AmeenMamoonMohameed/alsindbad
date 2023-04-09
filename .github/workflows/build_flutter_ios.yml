@@ -1,0 +1,52 @@
+name: Flutter iOS Build
+
+on:
+  push:
+    branches:
+      - master # Change this to the branch you want to trigger the build
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      with:
+        flutter-version: 'latest'
+        channel: 'stable'
+
+    - name: Install CocoaPods
+      run: sudo gem install cocoapods
+
+    - name: Clean CocoaPods cache
+      run: pod cache clean --all
+
+    - name: Install dependencies
+      run: flutter pub get
+
+    - name: Install CocoaPods dependencies
+      run: |
+        cd ios
+        pod install
+
+    # Add the signing steps here if needed
+
+    - name: Build iOS IPA
+      run: |
+        cd ios
+        flutter build ipa --release
+
+    - name: Archive build output
+      run: |
+        mkdir build-artifacts
+        cp build/ios/ipa/Runner.ipa build-artifacts/
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: build-artifacts/
