@@ -37,7 +37,7 @@ jobs:
 
     - name: Build iOS IPA
       run: |
-        flutter build ipa --release
+        flutter build ipa --release --no-codesign
 
     - name: Archive build output
       run: |
