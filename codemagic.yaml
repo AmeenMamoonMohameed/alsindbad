@@ -4,32 +4,21 @@ workflows:
     name: Build Android and iOS
     environment:
       flutter: stable
-      xcode: latest
+      xcode: "14.2" # تغيير إصدار إكسكود إلى 13.2
       cocoapods: default
     scripts:
       - flutter packages pub get
       - flutter format --set-exit-if-changed .
       - flutter analyze
       - flutter test
+      - flutter build apk --debug --no-codesign
+      - flutter build ios --debug --no-codesign
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.aab
       - build/ios/ipa/*.ipa
+
     publishing:
       email:
         recipients:
           - ameenmamwn7@gmail.com
-
-    build:
-      android:
-        build_environment: Android
-        output: build
-        args:
-          - "--debug"
-          - "--no-codesign"
-      ios:
-        build_environment: iOS
-        output: build/ios/ipa
-        args:
-          - "--debug"
-          - "--no-codesign"
