@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>633819536577-508bmu73p59gopkgt8opak49qs2bqq89.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.633819536577-508bmu73p59gopkgt8opak49qs2bqq89</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>633819536577-42mi6m90i9md0n53qgaarujfrusf9agv.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAfw1U7D1VESUYAO5Ycae8bnWskPtMaj5M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>633819536577</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.arma.akarak</string>
+	<key>PROJECT_ID</key>
+	<string>akarak-f9f04</string>
+	<key>STORAGE_BUCKET</key>
+	<string>akarak-f9f04.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:633819536577:ios:d2a0c5a14a465e30a3c840</string>
+</dict>
+</plist>

@@ -1,0 +1,200 @@
+name: akarak
+description: wem2017.github.io
+version: 0.1.0+57
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  # sdk: ">=2.12.0 <3.0.0"
+  # sdk: ">=2.14.4 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_eval:
+    path: packages/flutter_eval-0.5.4
+
+  flutter_stripe: 7.0.0
+  http_auth: 1.0.1
+  cupertino_icons: 1.0.5
+  # firebase_core: ^2.7.0
+  # firebase_analytics: ^10.1.4
+  # firebase_messaging: ^14.2.5
+  # firebase_core_platform_interface: ^4.5.3
+  firebase_dynamic_links: ^5.0.15
+  shared_preferences: 2.0.15
+  intl: ^0.17.0
+  bloc: 8.0.3
+  url_launcher: 6.1.7
+  flutter_bloc: 8.0.1
+  device_info: 2.0.3
+  share: 2.0.4
+  dio: 4.0.6
+  cached_network_image: 3.2.1
+  card_swiper: 2.0.4
+  flutter_swiper_null_safety: 1.0.2
+  shimmer: 2.0.0
+  flutter_slidable: 1.3.1
+  image_picker: 0.8.6
+  google_maps_flutter: 2.1.8
+  photo_view: 0.14.0
+  intro_views_flutter: 3.2.0
+  rxdart: 0.27.7
+  font_awesome_flutter: 10.1.0
+  flutter_rating_bar: 4.0.1
+  qr_flutter: 4.0.0
+  qr_code_scanner: 1.0.0
+  dotted_border: 2.0.0+2
+  animations: 2.0.3
+  flutter_colorpicker: 1.0.3
+  flutter_svprogresshud: 1.0.0
+  webview_flutter: 3.0.4
+  showcaseview: 2.0.0
+  google_mobile_ads: 1.3.0
+  package_info_plus: 1.4.2
+  video_player: 2.4.5
+  flutter_polyline_points: 1.0.0
+  geolocator: 9.0.1
+  path_provider: 2.0.11
+  open_file: 3.2.1
+  # signalr_netcore: ^1.3.2
+  signalr_core: ^1.1.1
+  logging: ^1.0.2
+  # signalr_client: 0.1.6
+  # logging: 0.11.3+2
+  # google_sign_in: 5.4.1flutter channel dev
+  # edge_alert: 0.0.1
+  file_picker: ^4.6.1
+  flutter_chat_types: ^3.4.4
+  flutter_chat_ui: ^1.6.4
+  uuid: ^3.0.6
+  toggle_switch: ^2.0.1
+  sms_autofill: ^2.2.0
+  timer_count_down: ^2.2.1
+  country_picker: ^2.0.16
+  youtube_player_iframe: 3.1.0
+  flutter_colorful_tab: ^0.1.0
+  sticky_headers: 0.3.0+2
+  sliver_tools: 0.2.8
+  # super_editor: ^0.2.3
+  flutter_sticky_header: 0.6.4
+  # assets_audio_player: ^3.0.5 #// ios settings
+  vibration: ^1.7.6 #// ios settings
+  # flutter_local_notifications: ^12.0.4 # ios settings
+  # workmanager: ^0.5.0
+  cron: ^0.5.0
+  awesome_notifications: 0.6.21
+  timezone: ^0.9.0
+  connectivity_plus: ^2.3.7
+  fl_chart: ^0.55.2
+  flutter_svg: ^1.1.6
+  syncfusion_flutter_gauges: 20.4.38
+  syncfusion_flutter_charts: 20.4.38
+  syncfusion_flutter_core: 20.4.38
+  numberpicker: 2.1.1
+  another_flushbar: 1.12.29
+  web_socket_channel: 2.3.0
+  audio_waveforms: ^1.0.1
+  just_audio: ^0.9.31
+  just_audio_platform_interface: ^4.2.0
+  any_link_preview: ^3.0.0
+  grouped_list: ^5.1.2
+  emoji_picker_flutter: ^1.3.0
+  dart_eval: ^0.5.2
+  # flutter_eval: ^0.5.2
+  carousel_slider: ^4.1.1
+  # flutter_barcode_scanner: ^2.0.0
+  flutter_staggered_grid_view: 0.6.2
+  fluttertoast: 8.2.1
+  flutter_staggered_animations: 1.1.1
+  
+flutter:
+  assets:
+    - assets/
+    - assets/sounds/
+    - assets/images/
+    - assets/icons/
+    - assets/locale/
+  fonts:
+    - family: Almarai
+      fonts:
+        - asset: assets/fonts/Almarai-Bold.ttf
+        - asset: assets/fonts/Almarai-ExtraBold.ttf
+        - asset: assets/fonts/Almarai-Light.ttf
+        - asset: assets/fonts/Almarai-Regular.ttf
+    - family: Lemonada
+      fonts:
+        - asset: assets/fonts/Lemonada-Bold.ttf
+        - asset: assets/fonts/Lemonada-SemiBold.ttf
+        - asset: assets/fonts/Lemonada-Light.ttf
+        - asset: assets/fonts/Lemonada-Medium.ttf
+        - asset: assets/fonts/Lemonada-VariableFont_wght.ttf
+        - asset: assets/fonts/Lemonada-Regular.ttf
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Bold.ttf
+        - asset: assets/fonts/OpenSans-BoldItalic.ttf
+        - asset: assets/fonts/OpenSans-ExtraBold.ttf
+        - asset: assets/fonts/OpenSans-ExtraBoldItalic.ttf
+        - asset: assets/fonts/OpenSans-Italic.ttf
+        - asset: assets/fonts/OpenSans-Light.ttf
+        - asset: assets/fonts/OpenSans-LightItalic.ttf
+        - asset: assets/fonts/OpenSans-Regular.ttf
+        - asset: assets/fonts/OpenSans-SemiBold.ttf
+        - asset: assets/fonts/OpenSans-SemiBoldItalic.ttf
+    - family: ProximaNova
+      fonts:
+        - asset: assets/fonts/ProximaNova-Black.otf
+        - asset: assets/fonts/ProximaNova-Bold.otf
+        - asset: assets/fonts/ProximaNova-Extrabld.otf
+        - asset: assets/fonts/ProximaNova-Regular.otf
+        - asset: assets/fonts/ProximaNovaT-Thin.otf
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-Black.ttf
+        - asset: assets/fonts/Raleway-BlackItalic.ttf
+        - asset: assets/fonts/Raleway-Bold.ttf
+        - asset: assets/fonts/Raleway-BoldItalic.ttf
+        - asset: assets/fonts/Raleway-ExtraBold.ttf
+        - asset: assets/fonts/Raleway-ExtraBoldItalic.ttf
+        - asset: assets/fonts/Raleway-ExtraLight.ttf
+        - asset: assets/fonts/Raleway-ExtraLightItalic.ttf
+        - asset: assets/fonts/Raleway-Italic.ttf
+        - asset: assets/fonts/Raleway-Light.ttf
+        - asset: assets/fonts/Raleway-LightItalic.ttf
+        - asset: assets/fonts/Raleway-Medium.ttf
+        - asset: assets/fonts/Raleway-MediumItalic.ttf
+        - asset: assets/fonts/Raleway-Regular.ttf
+        - asset: assets/fonts/Raleway-SemiBold.ttf
+        - asset: assets/fonts/Raleway-SemiBoldItalic.ttf
+        - asset: assets/fonts/Raleway-Thin.ttf
+        - asset: assets/fonts/Raleway-ThinItalic.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Black.ttf
+        - asset: assets/fonts/Roboto-BlackItalic.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto-BoldItalic.ttf
+        - asset: assets/fonts/Roboto-Italic.ttf
+        - asset: assets/fonts/Roboto-Light.ttf
+        - asset: assets/fonts/Roboto-LightItalic.ttf
+        - asset: assets/fonts/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto-MediumItalic.ttf
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Thin.ttf
+        - asset: assets/fonts/Roboto-ThinItalic.ttf
+    - family: Merriweather
+      fonts:
+        - asset: assets/fonts/Merriweather-Black.ttf
+        - asset: assets/fonts/Merriweather-BlackItalic.ttf
+        - asset: assets/fonts/Merriweather-Bold.ttf
+        - asset: assets/fonts/Merriweather-BoldItalic.ttf
+        - asset: assets/fonts/Merriweather-Italic.ttf
+        - asset: assets/fonts/Merriweather-Light.ttf
+        - asset: assets/fonts/Merriweather-LightItalic.ttf
+        - asset: assets/fonts/Merriweather-Regular.ttf
+  uses-material-design: true
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 2.0.1

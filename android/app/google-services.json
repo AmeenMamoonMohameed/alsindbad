@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "633819536577",
+    "project_id": "akarak-f9f04",
+    "storage_bucket": "akarak-f9f04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633819536577:android:0f6d04998a8cf0a2a3c840",
+        "android_client_info": {
+          "package_name": "com.arma.akarak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633819536577-42mi6m90i9md0n53qgaarujfrusf9agv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arma.akarak",
+            "certificate_hash": "08704a6a8ab1756db82db9d5de5b66cebd3d3acd"
+          }
+        },
+        {
+          "client_id": "633819536577-g7ldo68m1e8ed911b5nhtfjgl6ctshf3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5k4khJT_04dUA7lfk2RF98p65j6hMKnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633819536577-g7ldo68m1e8ed911b5nhtfjgl6ctshf3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "633819536577-508bmu73p59gopkgt8opak49qs2bqq89.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.arma.akarak"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
