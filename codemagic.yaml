@@ -6,6 +6,7 @@ workflows:
       flutter: stable
       xcode: "13.2" # تغيير إصدار إكسكود إلى 13.2
       cocoapods: default
+    instance_type: mac_mini_m1 # إضافة هذا السطر
     scripts:
       - flutter packages pub get
       - flutter format --set-exit-if-changed .
