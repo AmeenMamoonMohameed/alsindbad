@@ -1,36 +1,35 @@
+version: 2.0
 workflows:
-  my-workflow:
+  build-android-ios:
+    name: Build Android and iOS
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
     scripts:
-      - name: Add provisioning profiles
-        script: |
-          set -e # exit on first failed command
-
-          PROFILES_HOME="$HOME/Library/MobileDevice/Provisioning Profiles"
-          mkdir -p "$PROFILES_HOME"
-          echo ${PROVISIONING_PROFILE?} | base64 --decode > "$PROFILES_HOME/$(uuidgen).mobileprovision"
-      - name: Add signing certificate
-        script: |
-          set -e # exit on first failed command
-
-          echo ${CERTIFICATE?} | base64 --decode > /tmp/certificate.p12
-          keychain initialize
-          keychain add-certificates \
-              --certificate /tmp/certificate.p12 \
-              --certificate-password ${CERTIFICATE_PASSWORD?}
-      - name: Increment build number
-        script: agvtool new-version -all $BUILD_NUMBER
-      - name: Set up code signing settings on Xcode project
-        script: xcode-project use-profiles
-      - name: pod update
-        script: | 
-          find . -name "Podfile" -execdir pod install \;
-
-      - name: Build ipa for distribution
-        script: xcode-project build-ipa \
-                    --workspace "${XCODE_WORKSPACE?}" \
-                    --scheme "${XCODE_SCHEME?}"
+      - flutter packages pub get
+      - flutter format --set-exit-if-changed .
+      - flutter analyze
+      - flutter test
     artifacts:
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.aab
       - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - ameenmamwn7@gmail.com
 
-
- 
+    build:
+      android:
+        build_environment: Android
+        output: build
+        args:
+          - "--debug"
+          - "--no-codesign"
+      ios:
+        build_environment: iOS
+        output: build/ios/ipa
+        args:
+          - "--debug"
+          - "--no-codesign"
