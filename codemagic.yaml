@@ -6,7 +6,6 @@ workflows:
       flutter: stable
       xcode: "13.2" # تغيير إصدار إكسكود إلى 13.2
       cocoapods: default
-    instance_type: mac_mini_m1 # إضافة هذا السطر
     scripts:
       - flutter packages pub get
       - flutter format --set-exit-if-changed .
@@ -23,3 +22,18 @@ workflows:
       email:
         recipients:
           - ameenmamwn7@gmail.com
+
+    jobs:
+      - name: Build Android
+        type: mac_mini_m1 # استخدام نوع آلة macOS M1
+        script:
+          - flutter build apk --debug
+        artifacts:
+          - build/**/outputs/**/*.apk
+
+      - name: Build iOS
+        type: mac_mini_m1 # استخدام نوع آلة macOS M1
+        script:
+          - flutter build ios --debug --no-codesign
+        artifacts:
+          - build/ios/ipa/*.ipa
