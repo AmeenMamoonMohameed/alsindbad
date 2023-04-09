@@ -10,6 +10,11 @@ jobs:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Check current directory
+      run: |
+        pwd
+        ls -la
+
     - uses: actions/setup-java@v1
       with:
         java-version: '12.x'
@@ -18,3 +23,4 @@ jobs:
         channel: 'stable'
     - run: flutter pub get
     - run: flutter build ios --release --no-codesign
+
