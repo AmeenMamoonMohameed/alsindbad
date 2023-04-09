@@ -37,7 +37,6 @@ jobs:
 
     - name: Build iOS IPA
       run: |
-        cd ios
         flutter build ipa --release
 
     - name: Archive build output
