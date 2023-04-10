@@ -34,7 +34,7 @@ jobs:
         pod install
 
     - name: Setup signing certificate and profile
-      uses: apple-actions/setup-signing@v1
+      uses: AmeenMamoonMohameed/alsindbad@v1
       with:
         apple-id: '${{ secrets.APPLE_ID }}' 
         password: ${{ secrets.APPLE_PASSWORD }}
