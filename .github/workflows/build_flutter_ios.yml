@@ -36,7 +36,7 @@ jobs:
     - name: Setup signing certificate and profile
       uses: apple-actions/setup-signing@v1
       with:
-        apple-id: '${{ secrets.APPLE_ID }}'
+        apple-id: '${{ secrets.APPLE_ID }}' 
         password: ${{ secrets.APPLE_PASSWORD }}
         type: 'distribution'
         certificate: /AuthKey_X79TSPTYV7.p8
