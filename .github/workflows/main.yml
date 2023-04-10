@@ -25,4 +25,11 @@ jobs:
     - run: flutter build ipa --debug
 #     - run: flutter build ios --release --no-codesign
 
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: MyApp-IPA
+        path: build/ios/archive/MyApp.ipa
+
+
 
