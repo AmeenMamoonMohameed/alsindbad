@@ -1,4 +1,4 @@
-name: Flutter iOS Build
+name: Flutter iOS Build with Signing
 
 on:
   push:
@@ -33,11 +33,18 @@ jobs:
         cd ios
         pod install
 
-    # Add the signing steps here if needed
+    - name: Setup signing certificate and profile
+      uses: apple-actions/setup-signing@v1
+      with:
+        apple-id: '${{ secrets.APPLE_ID }}'
+        password: ${{ secrets.APPLE_PASSWORD }}
+        type: 'distribution'
+        certificate: /AuthKey_X79TSPTYV7.p8
+        profile: /alsindbad_ios_app_development_1679096417.mobileprovision
 
     - name: Build iOS IPA
       run: |
-        flutter build ipa --release --no-codesign
+        flutter build ipa --release
 
     - name: Archive build output
       run: |
