@@ -39,14 +39,12 @@ jobs:
         security default-keychain -s ios-build.keychain
         security unlock-keychain -p ${{ secrets.KEYCHAIN_PASSWORD }} ios-build.keychain
         security set-keychain-settings -t 3600 -u ios-build.keychain
-        echo "/AmeenCertificate.p12" | base64 --decode > ios-build.cer
+        echo "${{ secrets.CERTIFICATE }}" | base64 --decode > ios-build.cer
         security import ./ios-build.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
 
     - name: Add Apple provisioning profile
       run: |
-        echo "${{ secrets.profile }}" | base64 --decode > ios-build.mobileprovision
-        mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-        cp ./ios-build.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+        cp ./profile1.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
     - name: Build iOS IPA
       run: |
