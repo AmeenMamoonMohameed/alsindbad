@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  extract_content:
+  extract_content: 
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
