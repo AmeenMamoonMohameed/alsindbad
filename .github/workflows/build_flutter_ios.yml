@@ -39,8 +39,8 @@ jobs:
         apple-id: '${{ secrets.APPLE_ID }}' 
         password: ${{ secrets.APPLE_PASSWORD }}
         type: 'distribution'
-        certificate: /AuthKey_X79TSPTYV7.p8
-        profile: /alsindbad_ios_app_development_1679096417.mobileprovision
+        certificate: /AmeenCertificate.p12
+        profile: '${{ secrets.profile }}' 
 
     - name: Build iOS IPA
       run: |
