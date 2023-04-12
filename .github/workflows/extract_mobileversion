@@ -1,0 +1,20 @@
+name: Extract mobileprovision Content
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  extract_content:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install libplist-utils
+    - name: Extract mobileprovision content
+      run: |
+        plutil -convert xml1 -o extracted_mobileprovision.plist filename.mobileprovision
+        plutil -p extracted_mobileprovision.plist > extracted_mobileprovision.txt
