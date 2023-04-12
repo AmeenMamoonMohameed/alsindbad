@@ -42,9 +42,9 @@ jobs:
         echo "${{ secrets.CERTIFICATE }}" | base64 --decode > ios-build.cer
         security import ./ios-build.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
 
-    - name: Add Apple provisioning profile
-      run: |
-        cp ./profile1.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+#     - name: Add Apple provisioning profile
+#       run: |
+#         cp ./profile1.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
     - name: Build iOS IPA
       run: |
