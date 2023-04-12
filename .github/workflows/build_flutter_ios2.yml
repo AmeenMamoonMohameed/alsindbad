@@ -1,0 +1,64 @@
+name: Flutter iOS Build with Signing
+
+on:
+  push:
+    branches:
+      - master # Change this to the branch you want to trigger the build
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '3.0.1'
+        channel: 'stable'
+
+    - name: Install CocoaPods
+      run: sudo gem install cocoapods
+
+    - name: Clean CocoaPods cache
+      run: pod cache clean --all
+
+    - name: Install dependencies
+      run: flutter pub get
+
+    - name: Install CocoaPods dependencies
+      run: |
+        cd ios
+        pod install
+
+    - name: Add Apple certificate to keychain
+      run: |
+        security create-keychain -p mysecretpassword ios-build.keychain
+        security default-keychain -s ios-build.keychain
+        security unlock-keychain -p mysecretpassword ios-build.keychain
+        security set-keychain-settings -t 3600 -u ios-build.keychain
+        echo "/AmeenCertificate.p12" | base64 --decode > ios-build.cer
+        security import ./ios-build.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
+
+    - name: Add Apple provisioning profile
+      run: |
+        echo "${{ secrets.profile }}" | base64 --decode > ios-build.mobileprovision
+        mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+        cp ./ios-build.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+
+    - name: Build iOS IPA
+      run: |
+        flutter build ipa --release
+
+    - name: Archive build output
+      run: |
+        mkdir build-artifacts
+        cp build/ios/ipa/Runner.ipa build-artifacts/
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: build-artifacts/
