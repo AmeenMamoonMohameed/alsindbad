@@ -12,5 +12,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Extract mobileprovision content
       run: |
-        plutil -convert xml1 -o extracted_mobileprovision.plist filename.mobileprovision
-        plutil -p extracted_mobileprovision.plist > extracted_mobileprovision.txt
+        plutil -convert xml1 -o extracted_mobileprovision.plist profile1.mobileprovision
+        plutil -p extracted_mobileprovision.plist > profile1.mobileprovision.txt
