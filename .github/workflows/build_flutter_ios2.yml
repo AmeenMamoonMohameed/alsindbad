@@ -35,16 +35,16 @@ jobs:
 
     - name: Add Apple certificate to keychain
       run: |
-        security create-keychain -p "${{ secrets.KEYCHAIN_PASSWORD }}" ios-build.keychain
+        security create-keychain -p "Ameen?Arma2023" ios-build.keychain
         security default-keychain -s ios-build.keychain
-        security unlock-keychain -p "${{ secrets.KEYCHAIN_PASSWORD }}" ios-build.keychain
+        security unlock-keychain -p "Ameen?Arma2023" ios-build.keychain
         security set-keychain-settings -t 3600 -u ios-build.keychain
         echo "${{ secrets.CERTIFICATE }}" | base64 --decode > ios-build.cer
         security import ./ios-build.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
 
-#     - name: Add Apple provisioning profile
-#       run: |
-#         cp ./profile1.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+    - name: Add Apple provisioning profile
+      run: |
+        cp ./profile1.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
     - name: Build iOS IPA
       run: |
